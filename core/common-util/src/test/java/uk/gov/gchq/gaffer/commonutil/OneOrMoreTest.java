@@ -17,6 +17,7 @@ package uk.gov.gchq.gaffer.commonutil;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -97,7 +98,7 @@ public class OneOrMoreTest {
         // Given
         final boolean deduplicate = true;
         final OneOrMore<Integer> collection = new OneOrMore<>(deduplicate);
-        final Set<Integer> expectedItems = new LinkedHashSet<>();
+        final Set<Integer> expectedItems = new HashSet<>();
         IntStream.rangeClosed(1, 200).forEach(expectedItems::add);
 
         // When
