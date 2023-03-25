@@ -23,8 +23,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.function.Function;
 
@@ -60,7 +60,7 @@ public class OneOrMore<T> implements Iterable<T> {
         this.singleItem = item;
         if (deduplicate) {
             newCollection = k -> {
-                final Collection<T> collection = new HashSet<>();
+                final Collection<T> collection = new LinkedHashSet<>();
                 collection.add(k);
                 return collection;
             };
